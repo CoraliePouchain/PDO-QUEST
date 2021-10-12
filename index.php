@@ -10,7 +10,7 @@ $friends = $statement->fetchAll();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 $firstname = trim($_POST['firstname']);
 $lastname = trim($_POST['lastname']);
-$query = "INSERT INTO friend(firstname, lastname) VALUES ('$firstname', '$lastname')"; 
+$query = "INSERT INTO friend(firstname, lastname) VALUES (:firstname, :lastname)"; 
 
 $statement = $pdo->prepare($query);
 
